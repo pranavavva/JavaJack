@@ -1,16 +1,25 @@
 package me.pavva.JavaJack;
 
-/**
- * Hello world!
- *
- */
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Hand player = new Hand();
+        Hand dealer = new Hand();
         Deck deck = new Deck();
-        for (int i = 0; i < 52; i++) {
-            System.out.println(deck.getCard(i).getSuit() + "\t" + deck.getCard(i).getRank() + "\t" + deck.getCard(i).getValue());
+        
+        deck.shuffle();
+        
+        for (int i = 0; i < 2; i++) {
+            deck.deal(player);
+            deck.deal(dealer);
+        }
+        
+        for (Card c : player.returnList()) {
+            System.out.println(c.getRank() + " of " + c.getSuit());
+        }
+        
+        for (Card c : dealer.returnList()) {
+            System.out.println(c.getRank() + " of " + c.getSuit());
         }
     }
 }
