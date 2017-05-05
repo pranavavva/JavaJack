@@ -18,4 +18,13 @@ public class Hand {
     public List<Card> returnList() {
         return this.heldCards;
     }
+    
+    public int getSum() {
+        int sum = 0;
+        for (Card c : this.heldCards) {
+            sum += c.getValue();
+        }
+        
+        return sum;
+    }
 }

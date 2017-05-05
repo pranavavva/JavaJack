@@ -1,11 +1,16 @@
 package me.pavva.JavaJack;
 
+import java.util.*;
+import javax.swing.*;
+
 public class App {
 
     public static void main(String[] args) {
         Hand player = new Hand();
         Hand dealer = new Hand();
         Deck deck = new Deck();
+        
+        Scanner sc = new Scanner(System.in);
         
         deck.shuffle();
         
@@ -14,12 +19,16 @@ public class App {
             deck.deal(dealer);
         }
         
-        for (Card c : player.returnList()) {
-            System.out.println(c.getRank() + " of " + c.getSuit());
+        JFrame frame = new JFrame("JavaJack");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setSize(500, 300);
+        frame.setVisible(true);
+        
+        
+        while (player.getSum() <= 21) {
+            System.out.println("You hands value is " + player.getSum() + ". Would you like to 'hit' or 'stay' ?");
         }
         
-        for (Card c : dealer.returnList()) {
-            System.out.println(c.getRank() + " of " + c.getSuit());
-        }
     }
 }
