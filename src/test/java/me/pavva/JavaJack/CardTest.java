@@ -3,7 +3,7 @@ package me.pavva.JavaJack;
 import org.junit.*;
 
 public class CardTest {
-
+    
     Card card = new Card(Suits.HEARTS, Ranks.TWO);
 
     @Test
