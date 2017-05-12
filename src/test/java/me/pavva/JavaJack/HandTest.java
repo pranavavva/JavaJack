@@ -17,5 +17,19 @@ public class HandTest {
         hand.addCard(card);
         Assert.assertEquals(hand.returnList(), hand.returnList());
     }
+    
+    @Test
+    public void testGetCard() {
+        Card card2 = card;
+        hand.addCard(card);
+        Assert.assertEquals(card2.getRank(), hand.getCard(0).getRank());
+    }
+    
+    @Test
+    public void testSum() {
+        hand.addCard(card);
+        int valueExpected = card.getValue();
+        Assert.assertEquals(hand.getCard(0).getValue(), valueExpected);
+    }
 
 }
