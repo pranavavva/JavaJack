@@ -29,7 +29,8 @@ public class HandTest {
     public void testSum() {
         hand.addCard(card);
         int valueExpected = card.getValue();
-        Assert.assertEquals(hand.getCard(0).getValue(), valueExpected);
+        int sum = hand.getSum();
+        Assert.assertEquals(sum, valueExpected);
     }
 
 }
