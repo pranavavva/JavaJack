@@ -6,7 +6,8 @@ import java.util.*;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        
         Hand player = new Hand();
         Hand dealer = new Hand(); //Dealer's hidden card will be his first card (0th index)
         Deck deck = new Deck();
@@ -27,12 +28,24 @@ public class App {
             String choice = sc.next();
 
             if (choice.equals("hit")) {
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
                 deck.deal(player);
                 System.out.println("You drew a " + player.getCard(player.returnList().size() - 1).getRank() + " of "
                                    + player.getCard(player.returnList().size() - 1).getSuit());
+            
             } else if (choice.equals("stay")) {
+                
                 break;
+                
             } else if (player.getSum() > 21) {
+                
 
                 System.out.println("Oh no! You busted! Dealer wins.");
 
@@ -56,8 +69,17 @@ public class App {
 
 
             if (dealer.getSum() > 17) {
+                
                 break;
+                
             } else if (dealer.getSum() <= 16) {
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                
                 deck.deal(dealer);
                 System.out.println("Dealer hits. He drew a " + dealer.getCard(dealer.returnList().size() - 1).getRank() + " of "
                                    + dealer.getCard(dealer.returnList().size() - 1).getSuit());
@@ -69,7 +91,12 @@ public class App {
             }
         }
         
-        
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         if (dealer.getSum() >= player.getSum()) {
             System.out.println("Oh no! You lost.\nDealer\'s total is " + dealer.getSum() + "\nYour total is " + player.getSum());
         } else {
