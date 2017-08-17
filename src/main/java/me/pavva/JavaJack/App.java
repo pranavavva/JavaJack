@@ -37,6 +37,7 @@ public class App {
 
 
                 deck.deal(player);
+                
                 System.out.println("You drew a " + player.getCard(player.returnList().size() - 1).getRank() + " of "
                                    + player.getCard(player.returnList().size() - 1).getSuit());
             
@@ -68,7 +69,7 @@ public class App {
         while (dealer.getSum() <= 21) {
 
 
-            if (dealer.getSum() > 17) {
+            if (dealer.getSum() > 16) {
                 
                 break;
                 
