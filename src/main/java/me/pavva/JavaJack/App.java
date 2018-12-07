@@ -1,12 +1,12 @@
 package me.pavva.JavaJack;
 
-import java.util.*;
+import java.util.Scanner;
 
 // import javax.swing.*;
 
 public class App {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         
         Hand player = new Hand();
         Hand dealer = new Hand(); //Dealer's hidden card will be his first card (0th index)
@@ -28,13 +28,6 @@ public class App {
             String choice = sc.next();
 
             if (choice.equals("hit")) {
-                
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
 
                 deck.deal(player);
                 
@@ -75,12 +68,6 @@ public class App {
                 
             } else if (dealer.getSum() <= 16) {
                 
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                
                 deck.deal(dealer);
                 System.out.println("Dealer hits. He drew a " + dealer.getCard(dealer.returnList().size() - 1).getRank() + " of "
                                    + dealer.getCard(dealer.returnList().size() - 1).getSuit());
@@ -90,12 +77,6 @@ public class App {
                 System.out.println("You won! Dealer busted!\nDealer\'s total is " + dealer.getSum() + "\nYour total is " + player.getSum());
                 System.exit(0);
             }
-        }
-        
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         if (dealer.getSum() >= player.getSum()) {

@@ -1,11 +1,11 @@
 package me.pavva.JavaJack;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hand {
-    
-    private List<Card> heldCards = new ArrayList<Card>();
+
+    private ArrayList<Card> heldCards = new ArrayList<Card>();
     
     public void addCard(Card card) {
         this.heldCards.add(card);

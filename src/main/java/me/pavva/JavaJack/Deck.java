@@ -1,12 +1,11 @@
 package me.pavva.JavaJack;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
 
-    private List<Card> cards = new ArrayList<Card>(52);
+    private ArrayList<Card> cards = new ArrayList<Card>(52);
 
     public Deck() {
 
@@ -29,6 +28,13 @@ public class Deck {
     public void deal(Hand targetPlayer) {
         targetPlayer.addCard(this.cards.get(0));
         this.cards.remove(0);
+    }
+
+    public void deal(Hand targetPlayer, int numberOfCards) {
+        for (int i = 0; i <= numberOfCards; i++) {
+            targetPlayer.addCard(this.cards.get(0));
+            this.cards.remove(0);
+        }
     }
 
     public void reset() {

@@ -4,10 +4,10 @@ public class Card {
     
     private Suits suit;
     private Ranks rank;
-    
-    public Card(Suits suit_name, Ranks card_rank) {
-        this.suit = suit_name;
-        this.rank = card_rank;
+
+    public Card(Suits suitName, Ranks cardRank) {
+        this.suit = suitName;
+        this.rank = cardRank;
     }
     
     public String getSuit() {
